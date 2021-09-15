@@ -6,7 +6,12 @@ import Controls from './Controls';
 
 describe('Controls', () => {
   it('displays controls that include radio buttons, form, and submit button', () => {
-    render(<Controls />);
+    render(
+      <Controls 
+        onChange={() => {}} 
+        onSubmit={() => {}} 
+      />
+    );
   });
 
   const controls = screen.getByTestId('controls-form');
