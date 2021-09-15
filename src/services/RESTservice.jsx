@@ -1,4 +1,4 @@
-export const APIRouter = async (url, route, body) => {
+export const fetchAPI = async (url, route, body) => {
   if(route === 'POST' || route === 'PUT' === route === 'DELETE') {
     return fetch(url, {
       route, headers: {

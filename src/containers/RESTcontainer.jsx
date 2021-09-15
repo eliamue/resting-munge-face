@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Controls from '../app/Controls';
+import Controls from '../components/resty/Controls';
 
 export default class RESTContainer extends Component {
   state = {
