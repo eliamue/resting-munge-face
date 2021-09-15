@@ -1,10 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import ReactJson from 'react-json-view';
 
-const Display = () => <div></div>;
+const Display = ({ display }) => {
+  return (
+    <div>
+      <ReactJson src={display} displayDataTypes={false}/>
+    </div>
+  );
+};
 
 Display.propTypes = {
-  url: PropTypes.string
+  display: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
 };
 
 export default Display;

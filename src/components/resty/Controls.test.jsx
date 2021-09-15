@@ -10,6 +10,8 @@ describe('Controls', () => {
       <Controls 
         onChange={() => {}} 
         onSubmit={() => {}} 
+        url=""
+        body=""
       />
     );
   });
