@@ -5,10 +5,10 @@ import { render, screen } from '@testing-library/react';
 import Display from './Display';
 
 describe('Display', () => {
-  it('displays stuff', () => {
-    render(<Display display="stuff" />);
+  it('displays test body', () => {
+    render(<Display res={{ Henlo: 'Go fetch!' }} />);
   });
 
-  const display = screen.getByTestId('display-test');
+  const display = screen.getByText('Go');
   expect(display).toMatchSnapshot();
 });
