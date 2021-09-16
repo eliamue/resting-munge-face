@@ -17,6 +17,7 @@ const Controls = ({ url, body, onChange, onSubmit }) => {
           id="url"
           value={url}
           placeholder="https://"
+          onChange={onChange}
         />
 
         <section className="route-types">
@@ -24,40 +25,45 @@ const Controls = ({ url, body, onChange, onSubmit }) => {
           <input 
             type="radio"
             name="route"
-            id="get" 
+            id="get"
+            value="GET"
             onChange={onChange} 
           />
           <label htmlFor="PUT">PUT</label>
           <input 
             type="radio"
             name="route" 
-            id="put" 
+            id="put"
+            value="PUT"
             onChange={onChange} 
           />
           <label htmlFor="POST">POST</label>
           <input 
             type="radio"
             name="route" 
-            id="post" 
+            id="post"
+            value="POST"
             onChange={onChange} 
           />
           <label htmlFor="DELETE">DELETE</label>
           <input 
             type="radio"
             name="route" 
-            id="delete" 
+            id="delete"
+            value="DELETE"
             onChange={onChange} 
           />
         </section>
 
-        <button aria-label="submit-request">Submit Request</button>
+        <button aria-label="submit-request" onClick={onSubmit}>Submit Request</button>
         
-        <input
-          aria-label="json-body"
+        <textarea
+          aria-label="body"
           type="text"
           placeholder="JSON body"
           name="body"
           value={body}
+          onChange={onChange}
         />
       </form>
     </>
@@ -65,10 +71,10 @@ const Controls = ({ url, body, onChange, onSubmit }) => {
 };
 
 Controls.propTypes = {
-  onChange: PropTypes.func,
-  onSubmit: PropTypes.func,
   url: PropTypes.string,
   body: PropTypes.string,
+  onChange: PropTypes.func,
+  onSubmit: PropTypes.func,
 };
 
 export default Controls;
