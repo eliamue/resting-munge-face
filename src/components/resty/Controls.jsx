@@ -20,32 +20,32 @@ const Controls = ({ onChange, onSubmit, url, body }) => {
           onChange={onChange}
         />
 
-        <section className="request-types">
+        <section className="route-types">
           <label htmlFor="GET">GET</label>
           <input 
             type="radio"
-            name="request"
+            name="route"
             id="get" 
             onChange={onChange} 
           />
           <label htmlFor="PUT">PUT</label>
           <input 
             type="radio"
-            name="request" 
+            name="route" 
             id="put" 
             onChange={onChange} 
           />
           <label htmlFor="POST">POST</label>
           <input 
             type="radio"
-            name="request" 
+            name="route" 
             id="post" 
             onChange={onChange} 
           />
           <label htmlFor="DELETE">DELETE</label>
           <input 
             type="radio"
-            name="request" 
+            name="route" 
             id="delete" 
             onChange={onChange} 
           />

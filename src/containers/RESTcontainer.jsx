@@ -1,53 +1,48 @@
 import React, { Component } from 'react';
 import Controls from '../components/resty/Controls';
+import Header from '../components/resty/Header';
 
 export default class RESTContainer extends Component {
   state = {
     url: '',
     route: '',
     body: '',
-    storage: [],
   };
 
   componentDidMount() {
     const pastRequests = JSON.parse(localStorage.getItem('storage'));
-    if (pastRequests) {
+    if(pastRequests) {
       this.setState({ storage: pastRequests });
     }
   }
 
   handleChange = (event) => {
-    this.setState({ [event.target.name]: event.target.value });
+    this.setState({ [event.name]: event.value });
   };
 
-  handleSubmit = (event) => {
+  handleSubmit = async (event) => {
     event.preventDefault();
-    const { url, route, storage, body } = this.state;
-    this.fetch();
-
-    this.setState((state) => ({
-      storage: [
-        ...state.storage,
-        {
-          url: { url },
-          route: { route },
-          storage: { storage },
-          body: { body },
-          key: `${url}+${route}`,
-        },
-      ],
-    }));
+    const { url, route, body } = this.state;
+    if(route === 'GET') {
+      await fetch(`${url}`, {
+        route
+      });
+    } else {
+      await fetch(`${url}`, {
+        route,
+        body: JSON.stringify(body)
+      });
+    }
   };
 
   render() {
-    const { url, route, body, storage, onChange, onSubmit } = this.state;
+    const { url, body, onChange, onSubmit } = this.state;
     return (
       <div>
+        <Header />
         <Controls 
           url={url} 
-          route={route} 
           body={body} 
-          storage={storage}
           onChange={onChange}
           onSubmit={onSubmit}
         />

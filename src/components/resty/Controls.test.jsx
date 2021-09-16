@@ -5,7 +5,7 @@ import { render, screen } from '@testing-library/react';
 import Controls from './Controls';
 
 describe('Controls', () => {
-  it('displays controls that include radio buttons, form, and submit button', () => {
+  it('displays controls that include radio buttons for each route, submit button and text box', () => {
     render(
       <Controls 
         onChange={() => {}} 
