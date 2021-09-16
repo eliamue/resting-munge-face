@@ -9,6 +9,6 @@ describe('Display', () => {
     render(<Display res={{ Henlo: 'Go fetch!' }} />);
   });
 
-  const display = screen.getByText('Go');
+  const display = screen.getByText('Henlo:');
   expect(display).toMatchSnapshot();
 });

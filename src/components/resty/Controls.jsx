@@ -5,9 +5,9 @@ const Controls = ({ url, body, onChange, onSubmit }) => {
   return (
     <>
       <form 
-        onSubmit={onSubmit} 
-        onChange={onChange} 
         data-testid="controls-form"
+        onSubmit={onSubmit}
+        onChange={onChange}
       >
         <label htmlFor="url">URL</label>
         <input
@@ -22,7 +22,8 @@ const Controls = ({ url, body, onChange, onSubmit }) => {
 
         <section className="route-types">
           <label htmlFor="GET">GET</label>
-          <input 
+          <input
+            aria-label="GET"
             type="radio"
             name="route"
             id="get"
