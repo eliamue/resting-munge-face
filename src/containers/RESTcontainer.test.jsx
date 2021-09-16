@@ -22,10 +22,9 @@ describe('RESTcontainer', () => {
 
     const submit = await screen.findByRole('button');
     userEvent.click(submit);
-    screen.debug();
-    
+
     return waitFor(() => {
-      const rock = screen.getByText('"rock octorok"');
+      const rock = screen.getByText('"rock octorok"', {}, { timeout: 5000 });
       expect(rock).toBeTruthy();
     });
 
