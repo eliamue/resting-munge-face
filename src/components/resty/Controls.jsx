@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const Controls = ({ onChange, onSubmit, url, body }) => {
+const Controls = ({ url, body, onChange, onSubmit }) => {
   return (
     <>
       <form 
@@ -17,7 +17,6 @@ const Controls = ({ onChange, onSubmit, url, body }) => {
           id="url"
           value={url}
           placeholder="https://"
-          onChange={onChange}
         />
 
         <section className="route-types">
@@ -59,7 +58,6 @@ const Controls = ({ onChange, onSubmit, url, body }) => {
           placeholder="JSON body"
           name="body"
           value={body}
-          onChange={onChange}
         />
       </form>
     </>
@@ -67,10 +65,10 @@ const Controls = ({ onChange, onSubmit, url, body }) => {
 };
 
 Controls.propTypes = {
-  onChange: PropTypes.func.isRequired,
-  onSubmit: PropTypes.func.isRequired,
-  url: PropTypes.string.isRequired,
-  body: PropTypes.string.isRequired,
+  onChange: PropTypes.func,
+  onSubmit: PropTypes.func,
+  url: PropTypes.string,
+  body: PropTypes.string,
 };
 
 export default Controls;

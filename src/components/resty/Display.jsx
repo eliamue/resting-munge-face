@@ -2,16 +2,16 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import ReactJson from 'react-json-view';
 
-const Display = ({ display }) => {
+const Display = ({ res }) => {
   return (
     <div>
-      <ReactJson src={display} displayDataTypes={false}/>
+      <ReactJson src={res} />
     </div>
   );
 };
 
 Display.propTypes = {
-  display: PropTypes.oneOfType([PropTypes.object, PropTypes.array]).isRequired,
+  res: PropTypes.oneOfType([PropTypes.object, PropTypes.array]),
 };
 
 export default Display;

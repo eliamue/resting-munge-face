@@ -1,51 +1,42 @@
 import React, { Component } from 'react';
 import Controls from '../components/resty/Controls';
 import Header from '../components/resty/Header';
+import Display from '../components/resty/Display';
+import { fetchAPI } from '../services/RESTservice';
 
 export default class RESTContainer extends Component {
   state = {
     url: '',
     route: '',
     body: '',
+    display: { Henlo: 'Go fetch!' },
   };
 
-  componentDidMount() {
-    const pastRequests = JSON.parse(localStorage.getItem('storage'));
-    if(pastRequests) {
-      this.setState({ storage: pastRequests });
-    }
-  }
-
   handleChange = (event) => {
-    this.setState({ [event.name]: event.value });
+    this.setState({ [event.target.name]: event.target.value });
   };
 
   handleSubmit = async (event) => {
-    event.preventDefault();
     const { url, route, body } = this.state;
-    if(route === 'GET') {
-      await fetch(`${url}`, {
-        route
-      });
-    } else {
-      await fetch(`${url}`, {
-        route,
-        body: JSON.stringify(body)
-      });
-    }
+    event.preventDefault();
+
+    const res = await fetchAPI(url, route, body);
+    this.setState({ display: res });
   };
 
   render() {
-    const { url, body, onChange, onSubmit } = this.state;
+    const { url, body, route, display } = this.state;
     return (
       <div>
         <Header />
-        <Controls 
-          url={url} 
-          body={body} 
-          onChange={onChange}
-          onSubmit={onSubmit}
+        <Controls
+          url={url}
+          route={route}
+          body={body}
+          onChange={this.handleChange}
+          onSubmit={this.handleSubmit}
         />
+        <Display display={display} />
       </div>
     );
   }
