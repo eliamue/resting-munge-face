@@ -7,8 +7,8 @@ describe('Controls', () => {
     render(<Controls 
       url="" 
       body="" 
-      onChange={() => {}} 
-      onSubmit={() => {}} 
+      handleChange={() => {}} 
+      handleSubmit={() => {}} 
     />);
     const controls = screen.getByTestId('controls-form');
     expect(controls).toMatchSnapshot();

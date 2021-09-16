@@ -4,7 +4,7 @@ import Header from '../components/resty/Header';
 import Display from '../components/resty/Display';
 import { fetchAPI } from '../services/RESTservice';
 
-export default class RESTContainer extends Component {
+export default class RESTcontainer extends Component {
   state = {
     url: '',
     route: '',
@@ -19,9 +19,8 @@ export default class RESTContainer extends Component {
   handleSubmit = async (event) => {
     event.preventDefault();
     const { url, route, body } = this.state;
-
     const res = await fetchAPI(url, route, body);
-    this.setState({ display: res.data });
+    this.setState({ display: res });
   };
 
   render() {
@@ -33,8 +32,8 @@ export default class RESTContainer extends Component {
           url={url}
           route={route}
           body={body}
-          onChange={this.handleChange}
-          onSubmit={this.handleSubmit}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
         />
         <Display display={display} />
       </div>

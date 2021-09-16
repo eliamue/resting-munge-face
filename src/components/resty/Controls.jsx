@@ -2,13 +2,12 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import styles from '../../styles/Controls.css';
 
-const Controls = ({ url, body, onChange, onSubmit }) => {
+const Controls = ({ url, body, handleChange, handleSubmit }) => {
   return (
     <>
       <form 
         data-testid="controls-form"
-        onSubmit={onSubmit}
-        onChange={onChange}
+        onSubmit={handleSubmit}
         className={styles.Controls}
       >
         <input
@@ -18,7 +17,7 @@ const Controls = ({ url, body, onChange, onSubmit }) => {
           id="url"
           value={url}
           placeholder="https://"
-          onChange={onChange}
+          onChange={handleChange}
           className={styles.url}
         />
 
@@ -30,7 +29,7 @@ const Controls = ({ url, body, onChange, onSubmit }) => {
             name="route"
             id="get"
             value="GET"
-            onChange={onChange}
+            onChange={handleChange}
             className={styles.routesa}
           />
           <label htmlFor="PUT">PUT</label>
@@ -39,7 +38,7 @@ const Controls = ({ url, body, onChange, onSubmit }) => {
             name="route" 
             id="put"
             value="PUT"
-            onChange={onChange}
+            onChange={handleChange}
             className={styles.routes}
           />
           <label htmlFor="POST">POST</label>
@@ -48,7 +47,7 @@ const Controls = ({ url, body, onChange, onSubmit }) => {
             name="route" 
             id="post"
             value="POST"
-            onChange={onChange}
+            onChange={handleChange}
             className={styles.routes}
           />
           <label htmlFor="DELETE">DELETE</label>
@@ -57,7 +56,7 @@ const Controls = ({ url, body, onChange, onSubmit }) => {
             name="route" 
             id="delete"
             value="DELETE"
-            onChange={onChange}
+            onChange={handleChange}
             className={styles.routes}
           />
           <button aria-label="submit-request">Submit Request</button>
@@ -70,7 +69,7 @@ const Controls = ({ url, body, onChange, onSubmit }) => {
           placeholder="JSON body"
           name="body"
           value={body}
-          onChange={onChange}
+          onChange={handleChange}
         />
       </form>
     </>
@@ -81,8 +80,8 @@ Controls.propTypes = {
   url: PropTypes.string,
   body: PropTypes.string,
   route: PropTypes.string,
-  onChange: PropTypes.func,
-  onSubmit: PropTypes.func,
+  handleChange: PropTypes.func,
+  handleSubmit: PropTypes.func,
 };
 
 export default Controls;
