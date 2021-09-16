@@ -11,7 +11,7 @@ const Controls = ({ url, body, onChange, onSubmit }) => {
       >
         <label htmlFor="url">URL</label>
         <input
-          aria-label="url-input"
+          aria-label="url"
           type="url"
           name="url"
           id="url"
@@ -28,7 +28,7 @@ const Controls = ({ url, body, onChange, onSubmit }) => {
             name="route"
             id="get"
             value="GET"
-            onChange={onChange} 
+            onChange={onChange}
           />
           <label htmlFor="PUT">PUT</label>
           <input 
@@ -36,7 +36,7 @@ const Controls = ({ url, body, onChange, onSubmit }) => {
             name="route" 
             id="put"
             value="PUT"
-            onChange={onChange} 
+            onChange={onChange}
           />
           <label htmlFor="POST">POST</label>
           <input 
@@ -44,7 +44,7 @@ const Controls = ({ url, body, onChange, onSubmit }) => {
             name="route" 
             id="post"
             value="POST"
-            onChange={onChange} 
+            onChange={onChange}
           />
           <label htmlFor="DELETE">DELETE</label>
           <input 
@@ -52,11 +52,11 @@ const Controls = ({ url, body, onChange, onSubmit }) => {
             name="route" 
             id="delete"
             value="DELETE"
-            onChange={onChange} 
+            onChange={onChange}
           />
         </section>
 
-        <button aria-label="submit-request" onClick={onSubmit}>Submit Request</button>
+        <button aria-label="submit-request">Submit Request</button>
         
         <textarea
           aria-label="body"
@@ -74,6 +74,7 @@ const Controls = ({ url, body, onChange, onSubmit }) => {
 Controls.propTypes = {
   url: PropTypes.string,
   body: PropTypes.string,
+  route: PropTypes.string,
   onChange: PropTypes.func,
   onSubmit: PropTypes.func,
 };

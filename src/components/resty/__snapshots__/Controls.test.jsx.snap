@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Controls displays controls that include radio buttons for each route, submit button and text box 1`] = `
+<form
+  data-testid="controls-form"
+>
+  <label
+    for="url"
+  >
+    URL
+  </label>
+  <input
+    aria-label="url"
+    id="url"
+    name="url"
+    placeholder="https://"
+    type="url"
+    value=""
+  />
+  <section
+    class="route-types"
+  >
+    <label
+      for="GET"
+    >
+      GET
+    </label>
+    <input
+      aria-label="GET"
+      id="get"
+      name="route"
+      type="radio"
+      value="GET"
+    />
+    <label
+      for="PUT"
+    >
+      PUT
+    </label>
+    <input
+      id="put"
+      name="route"
+      type="radio"
+      value="PUT"
+    />
+    <label
+      for="POST"
+    >
+      POST
+    </label>
+    <input
+      id="post"
+      name="route"
+      type="radio"
+      value="POST"
+    />
+    <label
+      for="DELETE"
+    >
+      DELETE
+    </label>
+    <input
+      id="delete"
+      name="route"
+      type="radio"
+      value="DELETE"
+    />
+  </section>
+  <button
+    aria-label="submit-request"
+  >
+    Submit Request
+  </button>
+  <textarea
+    aria-label="body"
+    name="body"
+    placeholder="JSON body"
+    type="text"
+  />
+</form>
+`;

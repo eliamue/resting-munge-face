@@ -16,12 +16,12 @@ export default class RESTContainer extends Component {
     this.setState({ [event.target.name]: event.target.value });
   };
 
-  handleSubmit = (event) => {
-    const { url, route, body } = this.state;
+  handleSubmit = async (event) => {
     event.preventDefault();
+    const { url, route, body } = this.state;
 
-    const res = fetchAPI(url, route, body);
-    this.setState({ display: res });
+    const res = await fetchAPI(url, route, body);
+    this.setState({ display: res.data });
   };
 
   render() {

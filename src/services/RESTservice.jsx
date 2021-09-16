@@ -1,14 +1,13 @@
 export const fetchAPI = (url, route, body) => {
-  if(route === 'POST' || route === 'PUT' || route === 'DELETE') {
+  if(route !== 'GET') {
     return fetch(url, {
-      route, headers: {
-        'Content-Type': 'application/json'
+      method: route,
+      headers: {
+        'Content-Type': 'application/json',
       },
-      body
-    })
-      .then((res) => res.json());
+      body,
+    }).then((res) => res.json());
   } else {
-    return fetch(url)
-      .then((res) => res.json());
+    return fetch(url, { method: route }).then((res) => res.json());
   }
 };
