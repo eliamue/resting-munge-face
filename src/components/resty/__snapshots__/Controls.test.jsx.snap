@@ -2,24 +2,19 @@
 
 exports[`Controls displays controls that include radio buttons for each route, submit button and text box 1`] = `
 <form
+  class="Controls"
   data-testid="controls-form"
 >
-  <label
-    for="url"
-  >
-    URL
-  </label>
   <input
     aria-label="url"
+    class="url"
     id="url"
     name="url"
     placeholder="https://"
     type="url"
     value=""
   />
-  <section
-    class="route-types"
-  >
+  <section>
     <label
       for="GET"
     >
@@ -27,6 +22,7 @@ exports[`Controls displays controls that include radio buttons for each route, s
     </label>
     <input
       aria-label="GET"
+      class="routesa"
       id="get"
       name="route"
       type="radio"
@@ -38,6 +34,7 @@ exports[`Controls displays controls that include radio buttons for each route, s
       PUT
     </label>
     <input
+      class="routes"
       id="put"
       name="route"
       type="radio"
@@ -49,6 +46,7 @@ exports[`Controls displays controls that include radio buttons for each route, s
       POST
     </label>
     <input
+      class="routes"
       id="post"
       name="route"
       type="radio"
@@ -60,17 +58,18 @@ exports[`Controls displays controls that include radio buttons for each route, s
       DELETE
     </label>
     <input
+      class="routes"
       id="delete"
       name="route"
       type="radio"
       value="DELETE"
     />
+    <button
+      aria-label="submit-request"
+    >
+      Submit Request
+    </button>
   </section>
-  <button
-    aria-label="submit-request"
-  >
-    Submit Request
-  </button>
   <textarea
     aria-label="body"
     name="body"

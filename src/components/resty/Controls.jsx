@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import styles from '../../styles/Controls.css';
 
 const Controls = ({ url, body, onChange, onSubmit }) => {
   return (
@@ -8,8 +9,8 @@ const Controls = ({ url, body, onChange, onSubmit }) => {
         data-testid="controls-form"
         onSubmit={onSubmit}
         onChange={onChange}
+        className={styles.Controls}
       >
-        <label htmlFor="url">URL</label>
         <input
           aria-label="url"
           type="url"
@@ -18,9 +19,10 @@ const Controls = ({ url, body, onChange, onSubmit }) => {
           value={url}
           placeholder="https://"
           onChange={onChange}
+          className={styles.url}
         />
 
-        <section className="route-types">
+        <section>
           <label htmlFor="GET">GET</label>
           <input
             aria-label="GET"
@@ -29,6 +31,7 @@ const Controls = ({ url, body, onChange, onSubmit }) => {
             id="get"
             value="GET"
             onChange={onChange}
+            className={styles.routesa}
           />
           <label htmlFor="PUT">PUT</label>
           <input 
@@ -37,6 +40,7 @@ const Controls = ({ url, body, onChange, onSubmit }) => {
             id="put"
             value="PUT"
             onChange={onChange}
+            className={styles.routes}
           />
           <label htmlFor="POST">POST</label>
           <input 
@@ -45,6 +49,7 @@ const Controls = ({ url, body, onChange, onSubmit }) => {
             id="post"
             value="POST"
             onChange={onChange}
+            className={styles.routes}
           />
           <label htmlFor="DELETE">DELETE</label>
           <input 
@@ -53,10 +58,11 @@ const Controls = ({ url, body, onChange, onSubmit }) => {
             id="delete"
             value="DELETE"
             onChange={onChange}
+            className={styles.routes}
           />
+          <button aria-label="submit-request">Submit Request</button>
         </section>
 
-        <button aria-label="submit-request">Submit Request</button>
         
         <textarea
           aria-label="body"

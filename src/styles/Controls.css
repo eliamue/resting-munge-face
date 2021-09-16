@@ -1,0 +1,41 @@
+body {
+    justify-content: space-around;
+    justify-self: space-around;
+    justify-items: space-around;
+    text-align: center;
+    background-color: rgb(224, 230, 223);
+    margin-left: 150px;
+}
+
+textarea {
+    display: flex;
+    text-align: flex-start;
+    height: 50px;
+    width: 400px;
+}
+
+label {
+    justify-content: space-between;
+    justify-self: space-between;
+    justify-items: space-between;
+    text-align: space-between;
+    padding: 15px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-left: 150px;
+    margin-top: 10px;
+    align-items: flex-start;
+    justify-content: space-around;
+}
+
+button {
+    width: fit-content;
+}
+
+.url {
+    width: 80%;
+}
