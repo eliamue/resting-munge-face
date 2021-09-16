@@ -4,32 +4,63 @@ import PropTypes from 'prop-types';
 const Controls = ({ onChange, onSubmit, url, body }) => {
   return (
     <>
-      <form onSubmit={onSubmit} data-testid="controls-form">
+      <form 
+        onSubmit={onSubmit} 
+        onChange={onChange} 
+        data-testid="controls-form"
+      >
         <label htmlFor="url">URL</label>
         <input
+          aria-label="url-input"
           type="url"
+          name="url"
           id="url"
           value={url}
           placeholder="https://"
           onChange={onChange}
         />
-        <label>GET</label>
-        <input type="radio" id="get" onChange={onChange} />
 
-        <label>PUT</label>
-        <input type="radio" id="put" onChange={onChange} />
+        <section className="request-types">
+          <label htmlFor="GET">GET</label>
+          <input 
+            type="radio"
+            name="request"
+            id="get" 
+            onChange={onChange} 
+          />
+          <label htmlFor="PUT">PUT</label>
+          <input 
+            type="radio"
+            name="request" 
+            id="put" 
+            onChange={onChange} 
+          />
+          <label htmlFor="POST">POST</label>
+          <input 
+            type="radio"
+            name="request" 
+            id="post" 
+            onChange={onChange} 
+          />
+          <label htmlFor="DELETE">DELETE</label>
+          <input 
+            type="radio"
+            name="request" 
+            id="delete" 
+            onChange={onChange} 
+          />
+        </section>
 
-        <label>POST</label>
-        <input type="radio" id="post" onChange={onChange} />
-
-        <label>DELETE</label>
-        <input type="radio" id="delete" onChange={onChange} />
         <button aria-label="submit-request">Submit Request</button>
-        <textarea
-          placeholder="Request JSON"
+        
+        <input
+          aria-label="json-body"
+          type="text"
+          placeholder="JSON body"
+          name="body"
           value={body}
           onChange={onChange}
-        ></textarea>
+        />
       </form>
     </>
   );

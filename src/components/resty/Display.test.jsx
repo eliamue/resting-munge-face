@@ -6,7 +6,7 @@ import Display from './Display';
 
 describe('Display', () => {
   it('displays stuff', () => {
-    render(<Display />);
+    render(<Display display="stuff" />);
   });
 
   const display = screen.getByTestId('display-test');
